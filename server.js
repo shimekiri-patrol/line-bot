@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.send("LINE BOT OK");
 });
 
-// ★ Push通知テスト用エンドポイント
+// ★ Push通知テスト用エンドポイント（必ず webhook より上でも下でもOK）
 app.get("/push", async (req, res) => {
 
   // ★ 自分のユーザーIDをここに入れる（必ず文字列）
@@ -67,3 +67,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
