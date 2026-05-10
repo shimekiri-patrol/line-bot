@@ -23,6 +23,12 @@ app.post("/webhook", (req, res) => {
 
   Promise.all(
     events.map(event => {
+
+      // userId取得
+      const userId = event.source.userId;
+
+      console.log("USER ID:", userId);
+
       // テキストメッセージに返信
       return client.replyMessage(event.replyToken, {
         type: "text",
